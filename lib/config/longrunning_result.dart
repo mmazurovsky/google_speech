@@ -1,5 +1,8 @@
 import 'package:google_speech/generated/google/longrunning/operations.pb.dart';
 import 'package:google_speech/generated/google/rpc/status.pb.dart';
+import 'dart:core';
+
+import '../generated/google/cloud/speech/v1/cloud_speech.pb.dart';
 
 class LongRunningRequestResult {
   final Operation operation;
@@ -35,6 +38,7 @@ class ResultEndOffset {
 class Transcript {
   final String transcript;
   final double confidence;
+  final Iterable<WordInfo>? words;
 
-  Transcript({required this.transcript, required this.confidence});
+  Transcript({required this.transcript, required this.confidence, this.words});
 }
